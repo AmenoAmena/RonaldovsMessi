@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RvM</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="players">
+        <h2>Ronaldo<br> <p id="score_r_number">0</p><br>
+        <button id="button_r" onclick="score_r()">Ronaldo</button></h2>
+        
+        <h2>Messi<br> <p id="score_m_number">0</p> <br>
+        <button id="button_m" onclick="score_m()">Messi</button></h2>
+
+    </div>
+
+
+    <script>
+        let button_r = document.getElementById('button_r');
+        let button_m = document.getElementById('button_m');
+        let x = 0;
+        let y = 0;
+        function score_r(){
+            let score_r_number = document.getElementById('score_r_number')
+            x +=1
+            score_r_number.innerHTML = x;
+            button_r.disabled = true;
+            button_m.disabled = true;
+        }
+        function score_m(){
+            let score_m_number = document.getElementById('score_m_number')
+            y+=1
+            score_m_number.innerHTML = y;
+            button_r.disabled = true;
+            button_m.disabled = true;
+        }
+    </script>
+
+</body>
+</html>
